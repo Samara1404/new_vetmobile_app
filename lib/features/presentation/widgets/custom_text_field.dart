@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.controller,
     this.validator,
-    this.keyboardType = TextInputType.text,
+    this.keyboardType = TextInputType.text, required trailing,
   });
 
   @override

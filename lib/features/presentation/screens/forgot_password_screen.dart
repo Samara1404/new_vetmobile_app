@@ -43,7 +43,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             SizedBox(height: 20),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/mail.png'),
-              hintText: 'stambekova1404@gmail.com',
+              hintText: 'stambekova1404@gmail.com', trailing: null,
             ),
             SizedBox(height: 10),
             NavigatedButton(onPressed: () {

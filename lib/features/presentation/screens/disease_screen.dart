@@ -13,9 +13,9 @@ class DiseaseScreen extends StatefulWidget {
 
 class _DiseaseScreenState extends State<DiseaseScreen> {
   final List<String> images = [
-    'assets/images/desease1.png',
-    'assets/images/desease2.png',
-    'assets/images/desease3.png',
+    'assets/images/disease1.png',
+    'assets/images/disease2.png',
+    'assets/images/disease3.png',
   ];
 
   final List<String> titles = ['Ооруу', 'Ооруу', 'Ооруу'];
@@ -88,8 +88,9 @@ class _DiseaseScreenState extends State<DiseaseScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
+        topRight: Radius.circular(30)),
         child: BottomNavigationBar(
           backgroundColor: Color.fromRGBO(1, 165, 96, 1),
           items: <BottomNavigationBarItem>[
@@ -108,6 +109,7 @@ class _DiseaseScreenState extends State<DiseaseScreen> {
           ],
         ),
       ),
+      
     );
   }
 }

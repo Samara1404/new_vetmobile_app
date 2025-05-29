@@ -58,7 +58,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/person.png'),
-              hintText: 'Таштанова Акылай',
+              hintText: 'Таштанова Акылай', trailing: null,
             ),
             SizedBox(height: 4),
             Padding(
@@ -70,7 +70,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/phone.png'),
-              hintText: '996224051404',
+              hintText: '996224051404', trailing: null,
             ),
             SizedBox(height: 4),
             Padding(
@@ -82,7 +82,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/visible.png'),
-              hintText: '************',
+              hintText: '************', trailing: null,
             ),
             SizedBox(height: 4),
             Padding(
@@ -94,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/visible.png'),
-              hintText: '************',
+              hintText: '************', trailing: null,
             ),
             SizedBox(height: 8),
             NavigatedButton(

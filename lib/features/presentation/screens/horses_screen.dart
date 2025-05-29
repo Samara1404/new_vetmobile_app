@@ -3,14 +3,14 @@ import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class LivesStockScreen extends StatefulWidget {
-  const LivesStockScreen({super.key});
+class HorsesScreen extends StatefulWidget {
+  const HorsesScreen({super.key});
 
   @override
-  State<LivesStockScreen> createState() => _LivesStockScreenState();
+  State<HorsesScreen> createState() => _HorsesScreenState();
 }
 
-class _LivesStockScreenState extends State<LivesStockScreen> {
+class _HorsesScreenState extends State<HorsesScreen> {
     final List<String> images = [
     'assets/images/lvsicon1.png',
     'assets/images/lvsicon2.png',
@@ -25,7 +25,7 @@ class _LivesStockScreenState extends State<LivesStockScreen> {
       backgroundColor: Colors.white,
        appBar: CustomAppBar(
       
-        title: 'Бодо мал ',
+        title: 'Жылкы',
         leading: const Back(),
         actions: const [Logo()],
       ),
@@ -48,7 +48,7 @@ class _LivesStockScreenState extends State<LivesStockScreen> {
                 SizedBox(
                   width: 130,
                   height: 130,
-                  child: Image.asset('assets/images/livesstock1.png'),
+                  child: Image.asset('assets/images/assets/images/mhorse.png'),
                 ),
               ],
             ),

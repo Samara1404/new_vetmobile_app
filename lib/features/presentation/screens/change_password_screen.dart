@@ -43,12 +43,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             SizedBox(height: 20),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/lock.png'),
-              hintText: 'Жаңы код',
+              hintText: 'Жаңы код', trailing: Image.asset('assets/images/visible.png'),
             ),
             SizedBox(height: 6),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/lock.png'),
-              hintText: 'Жаңы кодду кайталаңыз',
+              hintText: 'Жаңы кодду кайталаңыз', trailing: Image.asset('assets/images/visible.png'),
             ),
             SizedBox(height: 10),
             NavigatedButton(onPressed: () {

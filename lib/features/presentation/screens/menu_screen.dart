@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/news_screen.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/vet_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
-import 'package:new_vetmobile_app/features/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
 class MenuScreen extends StatefulWidget {
@@ -39,8 +39,8 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: CustomAppBar(
-      
         title: 'Меню',
         leading: const Back(),
         actions: const [Logo()],
@@ -76,11 +76,33 @@ class _MenuScreenState extends State<MenuScreen> {
           },
         ),
       ),
-      bottomNavigationBar: CustomBottomNavBar(
-        selectedIndex: 0, onItemTapped: onItemTapped),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+        child: BottomNavigationBar(
+          backgroundColor: Color.fromRGBO(1, 165, 96, 1),
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/images/homeicon.png'),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: IconButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => NewsScreen())));
+              }, icon: Image.asset('assets/images/newsicon.png'),),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: IconButton(onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => VetScreen())));
+              }, icon: Image.asset('assets/images/veticon.png'),),
+              label: '',
+            ),
+          ],
+        ),
+      ),
     );
   }
 
-  onItemTapped(int p1) {
-  }
+  void onItemTapped(int p1) {}
 }

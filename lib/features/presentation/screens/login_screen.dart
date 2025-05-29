@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/phone.png'),
-              hintText: '996224051404',
+              hintText: '996224051404', trailing: null,
             ),
             SizedBox(height: 10),
             Padding(
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/visible.png'),
-              hintText: '************',
+              hintText: '************', trailing: null,
             ),
               Padding(
               padding: const EdgeInsets.only(top: 8, right: 15),

@@ -56,15 +56,16 @@ class _GrassScreenState extends State<GrassScreen> {
                     'assets/images/greengrass.png',
                     fit: BoxFit.cover,
                   ),
-                  SizedBox(height: 16),
+                  SizedBox(height: 20),
                   Padding(
-                    padding: EdgeInsets.all(5.0),
+                    padding: EdgeInsets.all(10),
                     child: Text('Lorem Ipsum is simply\ndummy text of the'),
                   ),
+                  
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
                 itemCount: images.length,
@@ -75,7 +76,7 @@ class _GrassScreenState extends State<GrassScreen> {
                       borderRadius: BorderRadius.circular(18),
                       side: BorderSide(color: Color.fromRGBO(1, 165, 96, 1)),
                     ),
-                    margin: EdgeInsets.symmetric(vertical: 22),
+                    margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
                       leading: Image.asset(images[index]),
                       title: Text(titles[index]),
@@ -88,8 +89,9 @@ class _GrassScreenState extends State<GrassScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+       bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
+        topRight: Radius.circular(30)),
         child: BottomNavigationBar(
           backgroundColor: Color.fromRGBO(1, 165, 96, 1),
           items: <BottomNavigationBarItem>[
@@ -108,6 +110,7 @@ class _GrassScreenState extends State<GrassScreen> {
           ],
         ),
       ),
-    );
+      
+      );
   }
 }
