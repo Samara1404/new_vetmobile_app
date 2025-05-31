@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/flash_screen.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/menu_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/navigated_button.dart';
 
 class LastScreen extends StatefulWidget {

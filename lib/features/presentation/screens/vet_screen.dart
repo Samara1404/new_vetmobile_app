@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/news_text.dart';
+import 'package:new_vetmobile_app/core/constant/style.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/vet_list_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
@@ -28,35 +28,53 @@ class _VetScreenState extends State<VetScreen> {
         title: 'Ветеринар',
         actions: [Logo()],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Column(
-              children: [
-                Image.asset(
-                  'assets/images/vetimg.png',
-                  fit: BoxFit.cover,
-                ),
-                SizedBox(height: 36),
-                Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Row(
-                    children: [
-                      Text('Dr.Асанов Асан'),
-                      SizedBox(width: 130),
-                      Text('Тажрыйба'),
-                    ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Column(
+                children: [
+                  Image.asset(
+                    'assets/images/vetimg.png',
+                    fit: BoxFit.cover,
                   ),
-                ),
-                Image.asset('assets/images/biotext.png'),
-              ],
-            ),
-            SizedBox(height: 12),
-            NavigatedButton(onPressed: () {
-               Navigator.push(context, MaterialPageRoute(builder: ((context) => VetListScreen())));
-            }, title: 'Билдируу  таштоо')
-          ],
+                  SizedBox(height: 36),
+                  Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      children: [
+                        Container(
+                          child: Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Dr.Асанов Асан', style: AppTextStyle.style5,), 
+                              Text('Ветеринар',style: AppTextStyle.style4,),   
+                            ],
+                          ),
+                        ),                  
+                        SizedBox(width: 130),
+                        Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Тажрыйба',style: AppTextStyle.style5),
+                              Text('7 жыл',style: AppTextStyle.style4,),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Image.asset('assets/images/biotext.png'),
+                ],
+              ),
+              SizedBox(height: 12),
+              NavigatedButton(onPressed: () {
+                 Navigator.push(context, MaterialPageRoute(builder: ((context) => VetListScreen())));
+              }, title: 'Билдируу  таштоо')
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: ClipRRect(

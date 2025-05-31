@@ -48,7 +48,7 @@ class _HorsesScreenState extends State<HorsesScreen> {
                 SizedBox(
                   width: 130,
                   height: 130,
-                  child: Image.asset('assets/images/assets/images/mhorse.png'),
+                  child: Image.asset('assets/images/mhorse.png'),
                 ),
               ],
             ),

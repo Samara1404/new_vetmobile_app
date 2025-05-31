@@ -21,11 +21,11 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
       backgroundColor: Colors.white,
       appBar: CustomAppBar(leading: Back(), title: '', actions: [Logo()], key: null,),
       body: Padding(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 150, right: 15),
+              padding: const EdgeInsets.only(top: 70, right: 15),
 
               child: Align(
                 alignment: Alignment.topLeft,
@@ -40,7 +40,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 6),
             CustomTextField(
               prefixIcon: Image.asset('assets/images/lock.png'),
               hintText: 'Жаңы код', trailing: Image.asset('assets/images/visible.png'),
