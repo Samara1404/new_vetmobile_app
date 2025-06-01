@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "647815433136",
+    "project_id": "new-vetmobile-app",
+    "storage_bucket": "new-vetmobile-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647815433136:android:a2d9dc7e679bcdcfd96475",
+        "android_client_info": {
+          "package_name": "com.example.new_vetmobile_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNrbyIlnk0D_qKC_l6S68Hd_kXCaXw8PQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

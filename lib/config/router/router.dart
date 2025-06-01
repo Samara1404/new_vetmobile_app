@@ -9,12 +9,11 @@ import 'package:new_vetmobile_app/features/presentation/screens/forgot_password_
 import 'package:new_vetmobile_app/features/presentation/screens/grass_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/hens_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/horses_screen.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/lives_stock_screen.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/livestock_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/login_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/menu_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/register_screen.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/sheep_screen.dart'
-   ;
+import 'package:new_vetmobile_app/features/presentation/screens/sheep_screen.dart' ; 
 import 'package:new_vetmobile_app/features/presentation/screens/user_account.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/user_account_edit.dart';
 
@@ -45,7 +44,7 @@ final GoRouter router = GoRouter(
         path: '/disease', builder: (context, state) => const DiseaseScreen()),
     GoRoute(
         path: '/livestock',
-        builder: (context, state) => const LivesStockScreen()),
+        builder: (context, state) => const LivestockScreen()),
     GoRoute(path: '/sheep', builder: (context, state) => const SheepScreen()),
     GoRoute(path: '/horses', builder: (context, state) => const HorsesScreen()),
     GoRoute(path: '/hens', builder: (context, state) => const HensScreen()),

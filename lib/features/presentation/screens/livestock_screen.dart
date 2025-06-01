@@ -3,14 +3,14 @@ import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class LivesStockScreen extends StatefulWidget {
-  const LivesStockScreen({super.key});
+class LivestockScreen extends StatefulWidget {
+  const LivestockScreen({super.key});
 
   @override
-  State<LivesStockScreen> createState() => _LivesStockScreenState();
+  State<LivestockScreen> createState() => _LivestockScreenState();
 }
 
-class _LivesStockScreenState extends State<LivesStockScreen> {
+class _LivestockScreenState extends State<LivestockScreen> {
     final List<String> images = [
     'assets/images/lvsicon1.png',
     'assets/images/lvsicon2.png',
