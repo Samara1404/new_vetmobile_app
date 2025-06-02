@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_vetmobile_app/core/constant/style.dart';
 
 class CustomTextField extends StatelessWidget {
   final Widget prefixIcon;
@@ -27,7 +28,7 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText,
         keyboardType: keyboardType,
         decoration: InputDecoration(
-          hintText: hintText, 
+          hintText: hintText, hintStyle: TextStyle(color: Colors.grey), 
           prefixIcon: Padding(
             padding: const EdgeInsets.only(left: 10.0, right: 10.0), 
             child: prefixIcon, 

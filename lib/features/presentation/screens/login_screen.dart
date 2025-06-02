@@ -44,23 +44,22 @@ class _LoginScreenState extends State<LoginScreen> {
           key: null,
         ),
         body: BlocConsumer<AuthBloc, AuthState>(
-          listener: (context, state) {
-            if (state is AuthSuccess) {
-              // Ийгиликтүү кирүүдөн кийин кийинки экранга өтүү
-              context.push('/menu'); // Мисалы, меню экранына өтүү
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Кирүү ийгиликтүү! User ID: ${state.userId}')),
-              );
-            } else if (state is AuthFailure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Ката: ${state.error}')),
-              );
-            }
-          },
-          builder: (context, state) {
-            if (state is AuthLoading) {
-              return Center(child: CircularProgressIndicator());
-            }
+  listener: (context, state) {
+    if (state is AuthSuccess) {
+      context.push('/menu');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Кирүү ийгиликтүү! User ID: ${state.userId ?? "Unknown"}')),
+      );
+    } else if (state is AuthFailure) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Ката: ${state.error}')),
+      );
+    }
+  },
+  builder: (context, state) {
+    if (state is AuthLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
             return SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(20),
@@ -84,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     CustomTextField(
                       controller: _phoneController,
                       prefixIcon: Image.asset('assets/images/phone.png'),
-                      hintText: '996224051404',
+                      hintText: '+996224051404',
                       trailing: null,
                     ),
                     SizedBox(height: 10),
@@ -98,9 +97,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     CustomTextField(
                       controller: _passwordController,
                       prefixIcon: Image.asset('assets/images/visible.png'),
-                      hintText: '************',
+                      hintText: '********',
                       trailing: null,
-                      obscureText: true, // Сырсөздү жашыруу үчүн
+                      obscureText: true,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 8, right: 15),
@@ -118,12 +117,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: 8),
                     NavigatedButton(
                       onPressed: () {
-                        context.read<AuthBloc>().add(
-                              LoginEvent(
-                                _phoneController.text,
-                                _passwordController.text,
-                              ),
-                            );
+                        if (_phoneController.text.isNotEmpty && _passwordController.text.isNotEmpty) {
+                          context.read<AuthBloc>().add(
+                                LoginEvent(
+                                  _phoneController.text,
+                                  _passwordController.text,
+                                ),
+                              );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Телефон номери жана сыр сөз толтуруңуз!')),
+                          );
+                        }
                       },
                       title: 'Кирүү',
                     ),
@@ -174,15 +179,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                     SizedBox(height: 20),
-                    GoogleButton(),
+                    GoogleButton(
+                     
+                    ),
                     SizedBox(height: 20),
                     Padding(
                       padding: const EdgeInsets.all(12),
                       child: Row(
                         children: [
                           IconButton(
-                              onPressed: () {},
-                              icon: Image.asset('assets/images/copyright.png')),
+                            onPressed: () {},
+                            icon: Image.asset('assets/images/copyright.png'),
+                          ),
                           Text(
                             'МаралАкгул.Бардык укуктар корголгон',
                             style: AppTextStyle.style6,

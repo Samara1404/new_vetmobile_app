@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new_vetmobile_app/bloc/auth/auth_bloc.dart';
+import 'package:new_vetmobile_app/bloc/auth/auth_event.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
 
 class GoogleButton extends StatelessWidget {
@@ -13,9 +16,11 @@ class GoogleButton extends StatelessWidget {
           backgroundColor: Colors.white,
           side: BorderSide(color: Color.fromRGBO(1, 165, 96, 1)),
         ),
-        onPressed: () {},
+        onPressed: () {
+          context.read<AuthBloc>().add(GoogleSignInEvent()); 
+        },
         icon: Image.asset('assets/images/google.png'),
-        label: Text('Google', style: AppTextStyle.style6,),
+        label: Text('Google', style: AppTextStyle.style6),
       ),
     );
   }
