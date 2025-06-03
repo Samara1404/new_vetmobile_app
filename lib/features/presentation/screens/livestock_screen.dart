@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/livestock_desease1.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/livestock_fert1.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/livestock_main1.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
@@ -11,7 +14,7 @@ class LivestockScreen extends StatefulWidget {
 }
 
 class _LivestockScreenState extends State<LivestockScreen> {
-    final List<String> images = [
+  final List<String> images = [
     'assets/images/lvsicon1.png',
     'assets/images/lvsicon2.png',
     'assets/images/lvsicon3.png',
@@ -19,20 +22,23 @@ class _LivestockScreenState extends State<LivestockScreen> {
 
   final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
 
+  final List<Widget> pages = [
+    const LivestockMain1(),
+    const LivestockDesease1(),
+    const LivestockFert1(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-       appBar: CustomAppBar(
-      
+      appBar: CustomAppBar(
         title: 'Бодо мал ',
         leading: const Back(),
         actions: const [Logo()],
       ),
-      
       body: Padding(
         padding: const EdgeInsets.all(26),
-        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -54,34 +60,44 @@ class _LivestockScreenState extends State<LivestockScreen> {
             ),
             SizedBox(height: 60),
             Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: ListView.builder(
-                    itemCount: images.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(24),
-                          side: BorderSide(color: Color.fromRGBO(1, 165, 96, 1)),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
+                child: ListView.builder(
+                  itemCount: images.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                        side: BorderSide(color: Color.fromRGBO(1, 165, 96, 1)),
+                      ),
+                      margin: EdgeInsets.symmetric(vertical: 8),
+                      child: ListTile(
+                        leading: Image.asset(images[index],
+                            color: Color.fromRGBO(1, 165, 96, 1)),
+                        title: Text(
+                          titles[index],
                         ),
-                        margin: EdgeInsets.symmetric(vertical: 8),
-                        child: ListTile(
-                          leading: Image.asset(images[index], color: Color.fromRGBO(1, 165, 96, 1)),
-                          title: Text(titles[index]),
-                         
-                        ),
-                      );
-                    },
-                  ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => pages[index],
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  },
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
+        ),
       ),
-          bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
-        topRight: Radius.circular(30)),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
         child: BottomNavigationBar(
           backgroundColor: Color.fromRGBO(1, 165, 96, 1),
           items: <BottomNavigationBarItem>[
@@ -100,7 +116,6 @@ class _LivestockScreenState extends State<LivestockScreen> {
           ],
         ),
       ),
-      
     );
   }
 }

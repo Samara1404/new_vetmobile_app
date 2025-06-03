@@ -16,6 +16,20 @@ class VetListScreen extends StatefulWidget {
 }
 
 class _VetListScreenState extends State<VetListScreen> {
+  final TextEditingController _controller = TextEditingController();
+  bool isTextEmpty = true; 
+
+  @override
+  void initState() {
+    super.initState();
+    
+    _controller.addListener(() {
+      setState(() {
+        isTextEmpty = _controller.text.isEmpty; 
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,59 +49,64 @@ class _VetListScreenState extends State<VetListScreen> {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Column(
-                children: [
-                  Text('Ветеринарга билдирүү таштоо', style: AppTextStyle.style5),
-                  SizedBox(height: 10),
-                  CustomTextField(
-                    prefixIcon: Image.asset('assets/images/person.png'),
-                    hintText: 'Аты жөнү',
-                    trailing: Image.asset('assets/images/check.png'),
-                  ),
-                  CustomTextField(
-                    prefixIcon: Image.asset('assets/images/phone.png'),
-                    hintText: 'Телефон номуруңуз',
-                    trailing: Image.asset('assets/images/false.png'),
-                  ),
-                ],
+              Text('Ветеринарга билдирүү таштоо', style: AppTextStyle.style5),
+              SizedBox(height: 10),
+              CustomTextField(
+                prefixIcon: Image.asset('assets/images/person.png'),
+                hintText: 'Аты жөнү',
+                trailing: Image.asset('assets/images/check.png'),
               ),
-              SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: SizedBox(
-                  height: 180,
-                  child: Card(
-                    color: Colors.white,
-                    shadowColor: Colors.blueGrey,
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Row(
-                          children: [
-                            Image.asset('assets/images/pencil.png'),
-                            SizedBox(width: 10),
-                            Text(
-                              'Text',
-                              style: AppTextStyle.style3,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+              CustomTextField(
+                prefixIcon: Image.asset('assets/images/phone.png'),
+                hintText: 'Телефон номуруңуз',
+                trailing: Image.asset('assets/images/false.png'),
               ),
+              SizedBox(height: 20),
+            Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Card(
+            color: Colors.white,
+            elevation: 4.0,
+            shape: RoundedRectangleBorder(
+              
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: TextField(
+              controller: _controller,
+              onChanged: (text) {
+                setState(() {
+                  isTextEmpty = text.isEmpty;
+                });
+              },
+              decoration: InputDecoration(
+                
+                hintText: "Text",
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 50),
+                prefixIcon: isTextEmpty ? Icon(Icons.edit, color: Colors.grey) : null,
+              ),
+            ),
+          ),
+        ),
+             
               SizedBox(height: 6),
               Center(
                 child: NavigatedButton(
-                    onPressed: () {
+                  onPressed: () {
+                    String message = _controller.text;
+                    if (message.isNotEmpty) {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => LastScreen())));
-                    },
-                    title: 'Жиберүү'),
+                        context,
+                        MaterialPageRoute(builder: (context) => LastScreen()),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('Билдирүүнү киргизиңиз')),
+                      );
+                    }
+                  },
+                  title: 'Жиберүү',
+                ),
               ),
               SizedBox(height: 18),
               Padding(
@@ -97,10 +116,9 @@ class _VetListScreenState extends State<VetListScreen> {
                     ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
-                        side: BorderSide(                  
-                          color: Color.fromRGBO(1, 165, 96, 1),
-                        ),
-                          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 30)),
+                        side: const BorderSide(color: Color.fromRGBO(1, 165, 96, 1)),
+                        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+                      ),
                       onPressed: () {},
                       label: Text(
                         'Сүрөт жүктөө',
@@ -108,14 +126,13 @@ class _VetListScreenState extends State<VetListScreen> {
                       ),
                       icon: Image.asset('assets/images/camera.png'),
                     ),
-                    SizedBox(width: 10),
-                      ElevatedButton.icon(
+                    const SizedBox(width: 10),
+                    ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
-                        side: BorderSide(                  
-                          color: Color.fromRGBO(1, 165, 96, 1),
-                        ),
-                          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 30)),
+                        side: const BorderSide(color: Color.fromRGBO(1, 165, 96, 1)),
+                        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+                      ),
                       onPressed: () {},
                       label: Text(
                         'Баасы',
@@ -125,38 +142,48 @@ class _VetListScreenState extends State<VetListScreen> {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
       ),
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
         child: BottomNavigationBar(
-          backgroundColor: Color.fromRGBO(1, 165, 96, 1),
+          backgroundColor: const Color.fromRGBO(1, 165, 96, 1),
+          onTap: (index) {
+            if (index == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NewsText()),
+              );
+            }
+          },
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Image.asset('assets/images/homeicon.png'),
-              label: '',
+              label: 'Үй',
             ),
             BottomNavigationBarItem(
-              icon: IconButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: ((context) => NewsText())));
-                },
-                icon: Image.asset('assets/images/newsicon.png'),
-              ),
-              label: '',
+              icon: Image.asset('assets/images/newsicon.png'),
+              label: 'Жаңылыктар',
             ),
             BottomNavigationBarItem(
               icon: Image.asset('assets/images/veticon.png'),
-              label: '',
+              label: 'Ветеринар',
             ),
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose(); // Контроллерди жабуу
+    super.dispose();
   }
 }
