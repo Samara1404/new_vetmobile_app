@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/horses_desease1.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/horses_fert1.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/horses_main1.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
@@ -17,7 +20,13 @@ class _HorsesScreenState extends State<HorsesScreen> {
     'assets/images/lvsicon3.png',
   ];
 
-  final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
+ final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
+
+  final List<Widget> pages = [
+    const HorsesMain1(),
+    const HorsesDesease1(),
+    const HorsesFert(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -67,10 +76,20 @@ class _HorsesScreenState extends State<HorsesScreen> {
                         ),
                         margin: EdgeInsets.symmetric(vertical: 8),
                         child: ListTile(
-                          leading: Image.asset(images[index], color: Color.fromRGBO(1, 165, 96, 1)),
-                          title: Text(titles[index]),
-                         
+                        leading: Image.asset(images[index],
+                            color: Color.fromRGBO(1, 165, 96, 1)),
+                        title: Text(
+                          titles[index],
                         ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => pages[index],
+                            ),
+                          );
+                        },
+                      ),
                       );
                     },
                   ),

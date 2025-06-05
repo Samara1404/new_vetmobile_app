@@ -12,14 +12,13 @@ class LivestockMain1 extends StatefulWidget {
 }
 
 class _LivestockMain1State extends State<LivestockMain1> {
+  
   final List<String> images = [
-    'assets/images/grass1.png',
-    'assets/images/grass2.png',
-    'assets/images/grass3.png',
+    'assets/images/shpmain2.png',
+    'assets/images/shpmain3.png',
+    'assets/images/shpmain3.png',
   ];
-
-  final List<String> titles = ['Тоют', 'Тоют', 'Тоют'];
-
+final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
@@ -53,7 +52,7 @@ class _LivestockMain1State extends State<LivestockMain1> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/greengrass.png',
+                    'assets/images/shpmain1.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),

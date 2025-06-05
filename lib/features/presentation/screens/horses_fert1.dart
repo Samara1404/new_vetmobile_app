@@ -4,21 +4,21 @@ import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class SheepDesease1 extends StatefulWidget {
-  const SheepDesease1({super.key});
+class HorsesFert extends StatefulWidget {
+  const HorsesFert({super.key});
 
   @override
-  State<SheepDesease1> createState() => _SheepDesease1State();
+  State<HorsesFert> createState() => _HorsesFertState();
 }
 
-class _SheepDesease1State extends State<SheepDesease1> {
+class _HorsesFertState extends State<HorsesFert> {
   final List<String> images = [
-    'assets/images/lvsdes2.png',
-    'assets/images/lvsdes3.png',
-    'assets/images/lvsdes4.png',
+    'assets/images/horses2.png',
+    'assets/images/horses3.png',
+    'assets/images/horses4.png',
   ];
 
-  final List<String> titles = ['Дарылоо ', 'Дарылоо ', 'Дарылоо '];
+  final List<String> titles = ['Уруктандыруу', 'Уруктандыруу ', 'Уруктандыруу '];
 
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
@@ -36,7 +36,7 @@ class _SheepDesease1State extends State<SheepDesease1> {
           },
           icon: Back(),
         ),
-        title: 'Дарылоо',
+        title: 'Уруктандыруу',
         actions: [Logo()],
       ),
       body: Padding(
@@ -53,7 +53,7 @@ class _SheepDesease1State extends State<SheepDesease1> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/medicine.png',
+                    'assets/images/horses1.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),

@@ -4,14 +4,14 @@ import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class SheepDesease1 extends StatefulWidget {
-  const SheepDesease1({super.key});
+class HensDesease extends StatefulWidget {
+  const HensDesease({super.key});
 
   @override
-  State<SheepDesease1> createState() => _SheepDesease1State();
+  State<HensDesease> createState() => _HensDeseaseState();
 }
 
-class _SheepDesease1State extends State<SheepDesease1> {
+class _HensDeseaseState extends State<HensDesease> {
   final List<String> images = [
     'assets/images/lvsdes2.png',
     'assets/images/lvsdes3.png',
@@ -53,7 +53,7 @@ class _SheepDesease1State extends State<SheepDesease1> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/medicine.png',
+                    'assets/images/hensdes1.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),

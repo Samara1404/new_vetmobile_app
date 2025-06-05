@@ -4,14 +4,14 @@ import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class SheepDesease1 extends StatefulWidget {
-  const SheepDesease1({super.key});
+class HorsesDesease1 extends StatefulWidget {
+  const HorsesDesease1({super.key});
 
   @override
-  State<SheepDesease1> createState() => _SheepDesease1State();
+  State<HorsesDesease1> createState() => _HorsesDesease1State();
 }
 
-class _SheepDesease1State extends State<SheepDesease1> {
+class _HorsesDesease1State extends State<HorsesDesease1> {
   final List<String> images = [
     'assets/images/lvsdes2.png',
     'assets/images/lvsdes3.png',
