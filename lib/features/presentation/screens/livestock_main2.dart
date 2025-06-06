@@ -20,22 +20,39 @@ class _LivestockMain2State extends State<LivestockMain2> {
         leading: const Back(),
         actions: const [Logo()],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text('Тема', style: AppTextStyle.style8),
-            ),
-            SizedBox(height: 16),
-            Container(
-              child:
-                  Image.asset('assets/images/lvsfeed.png', fit: BoxFit.cover),
-            ),
-            SizedBox(height: 24),
-            Image.asset('assets/images/lvstext2.png'),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text('Тема', style: AppTextStyle.style8),
+              ),
+              SizedBox(height: 16),
+              Container(
+                child:
+                    Image.asset('assets/images/lvsfeed.png', fit: BoxFit.cover),
+              ),
+              SizedBox(height: 24),
+              Image.asset('assets/images/lvstext2.png'),
+              Padding(padding: EdgeInsetsGeometry.all(20),
+              child: Column(
+                children: [
+                  Align(
+                alignment: Alignment.topLeft,
+                child: Text('Тема', style: AppTextStyle.style8),
+              ),
+              SizedBox(height: 16),
+              Container(
+                child:
+                    Image.asset('assets/images/grasslast.png', fit: BoxFit.cover),
+              ),
+                ],
+              ),
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: ClipRRect(

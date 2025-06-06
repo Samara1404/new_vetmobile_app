@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/horses_main2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
@@ -25,7 +26,9 @@ class _HensFert1State extends State<HensFert1> {
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
-
+ final List<Widget> pages = [
+    const HorsesMain2(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

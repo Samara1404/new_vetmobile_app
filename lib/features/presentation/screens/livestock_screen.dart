@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/livestock_desease1.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/livestock_fert1.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/livestock_main1.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/livestock_main2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
@@ -24,7 +23,7 @@ class _LivestockScreenState extends State<LivestockScreen> {
   final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
 
   final List<Widget> pages = [
-    const LivestockMain2(),
+    const LivestockMain1(),
     const LivestockDesease1(),
     const LivestockFert1(),
   ];

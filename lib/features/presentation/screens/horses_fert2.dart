@@ -4,19 +4,19 @@ import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class LivestockDesease2 extends StatefulWidget {
-  const LivestockDesease2({super.key});
+class HorsesFert2 extends StatefulWidget {
+  const HorsesFert2({super.key});
 
   @override
-  State<LivestockDesease2> createState() => _LivestockDesease2State();
+  State<HorsesFert2> createState() => _HorsesFert2State();
 }
 
-class _LivestockDesease2State extends State<LivestockDesease2> {
+class _HorsesFert2State extends State<HorsesFert2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Дарылоо ',
+        title: 'Уруктандыруу ',
         leading: const Back(),
         actions: const [Logo()],
       ),
@@ -32,7 +32,7 @@ class _LivestockDesease2State extends State<LivestockDesease2> {
               SizedBox(height: 16),
               Container(
                 child:
-                    Image.asset('assets/images/livesdes2.png', fit: BoxFit.cover),
+                    Image.asset('assets/images/horsesfert2.png', fit: BoxFit.cover),
               ),
               SizedBox(height: 24),
               Image.asset('assets/images/lvstext2.png'),

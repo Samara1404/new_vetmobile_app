@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/sheep-desease2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
@@ -25,7 +26,9 @@ class _SheepDesease1State extends State<SheepDesease1> {
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
-
+ final List<Widget> pages = [
+    const SheepDesease2(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +84,13 @@ class _SheepDesease1State extends State<SheepDesease1> {
                       leading: Image.asset(images[index]),
                       title: Text(titles[index]),
                       subtitle: Text(subtitles[index]),
-                    ),
+                       onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => pages[index]),
+                          );
+                        }),
                   );
                 },
               ),

@@ -9,10 +9,8 @@ import 'package:new_vetmobile_app/features/presentation/widgets/google_button.da
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/navigated_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import '../../../bloc/auth/auth_bloc.dart';
-import '../../../bloc/auth/auth_event.dart';
 import '../../../bloc/auth/auth_state.dart';
 
 class LoginScreen extends StatefulWidget {
