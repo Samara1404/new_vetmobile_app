@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/hens_fert2.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/horses_main2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
@@ -19,15 +20,19 @@ class _HensFert1State extends State<HensFert1> {
     'assets/images/hensfert4.png',
   ];
 
-  final List<String> titles = ['Уруктандыруу', 'Уруктандыруу ', 'Уруктандыруу '];
+  final List<String> titles = [
+    'Уруктандыруу',
+    'Уруктандыруу ',
+    'Уруктандыруу '
+  ];
 
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
- final List<Widget> pages = [
-    const HorsesMain2(),
+  final List<Widget> pages = [
+    const HensFert2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -64,7 +69,6 @@ class _HensFert1State extends State<HensFert1> {
                     padding: EdgeInsets.all(10),
                     child: Text('Lorem Ipsum is simply\ndummy text of the'),
                   ),
-                  
                 ],
               ),
             ),
@@ -81,10 +85,16 @@ class _HensFert1State extends State<HensFert1> {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
-                      leading: Image.asset(images[index]),
-                      title: Text(titles[index]),
-                      subtitle: Text(subtitles[index]),
-                    ),
+                        leading: Image.asset(images[index]),
+                        title: Text(titles[index]),
+                        subtitle: Text(subtitles[index]),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => pages[index]),
+                          );
+                        }),
                   );
                 },
               ),
@@ -92,9 +102,9 @@ class _HensFert1State extends State<HensFert1> {
           ],
         ),
       ),
-       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
-        topRight: Radius.circular(30)),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
         child: BottomNavigationBar(
           backgroundColor: Color.fromRGBO(1, 165, 96, 1),
           items: <BottomNavigationBarItem>[
@@ -113,7 +123,6 @@ class _HensFert1State extends State<HensFert1> {
           ],
         ),
       ),
-      
-      );
+    );
   }
 }
