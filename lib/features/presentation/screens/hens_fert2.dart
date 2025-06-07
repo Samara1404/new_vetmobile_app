@@ -32,7 +32,7 @@ class _HensFert2State extends State<HensFert2> {
               SizedBox(height: 16),
               Container(
                 child:
-                    Image.asset('assets/images/hensffert2.png', fit: BoxFit.cover),
+                    Image.asset('assets/images/ncorn.png', fit: BoxFit.cover),
               ),
               SizedBox(height: 24),
               Image.asset('assets/images/lvstext2.png'),

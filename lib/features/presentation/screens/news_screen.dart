@@ -26,7 +26,9 @@ class _NewsScreenState extends State<NewsScreen> {
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
-
+  final List<Widget> pages = [
+    const NewsText(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +54,6 @@ class _NewsScreenState extends State<NewsScreen> {
                 child: Text('Тема', style: AppTextStyle.style8),
               ),
             ),
-            
             Image.asset('assets/images/btftext1.png'),
             SizedBox(height: 16),
             Column(
@@ -62,7 +63,6 @@ class _NewsScreenState extends State<NewsScreen> {
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 16),
-               
               ],
             ),
             SizedBox(height: 10),
@@ -78,10 +78,16 @@ class _NewsScreenState extends State<NewsScreen> {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
-                      leading: Image.asset(images[index]),
-                      title: Text(titles[index]),
-                      subtitle: Text(subtitles[index]),
-                    ),
+                        leading: Image.asset(images[index]),
+                        title: Text(titles[index]),
+                        subtitle: Text(subtitles[index]),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => pages[index]),
+                          );
+                        }),
                   );
                 },
               ),
@@ -100,9 +106,13 @@ class _NewsScreenState extends State<NewsScreen> {
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: IconButton(onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: ((context) => NewsText())));
-              }, icon: Image.asset('assets/images/newsicon.png'),),
+              icon: IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: ((context) => NewsText())));
+                },
+                icon: Image.asset('assets/images/newsicon.png'),
+              ),
               label: '',
             ),
             BottomNavigationBarItem(
