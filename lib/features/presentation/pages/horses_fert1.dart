@@ -1,31 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/horses_main2.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/horses_fert2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class HorsesMain1 extends StatefulWidget {
-  const HorsesMain1({super.key});
+class HorsesFert extends StatefulWidget {
+  const HorsesFert({super.key});
 
   @override
-  State<HorsesMain1> createState() => _HorsesMain1State();
+  State<HorsesFert> createState() => _HorsesFertState();
 }
 
-class _HorsesMain1State extends State<HorsesMain1> {
+class _HorsesFertState extends State<HorsesFert> {
   final List<String> images = [
-    'assets/images/shpmain2.png',
-    'assets/images/shpmain3.png',
-    'assets/images/shpmain3.png',
+    'assets/images/horses2.png',
+    'assets/images/horses3.png',
+    'assets/images/horses4.png',
   ];
-  final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
+
+  final List<String> titles = [
+    'Уруктандыруу',
+    'Уруктандыруу ',
+    'Уруктандыруу '
+  ];
+
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
   final List<Widget> pages = [
-    const HorsesMain2(),
+    const HorsesFert2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,7 +43,7 @@ class _HorsesMain1State extends State<HorsesMain1> {
           },
           icon: Back(),
         ),
-        title: 'Тоют',
+        title: 'Уруктандыруу',
         actions: [Logo()],
       ),
       body: Padding(
@@ -54,7 +60,7 @@ class _HorsesMain1State extends State<HorsesMain1> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/shpmain1.png',
+                    'assets/images/horses1.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),

@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/livestock_fert2.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/livestock_desease2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class LivestockFert1 extends StatefulWidget {
-  const LivestockFert1({super.key});
+class LivestockDesease1 extends StatefulWidget {
+  const LivestockDesease1({super.key});
 
   @override
-  State<LivestockFert1> createState() => _LivestockFert1State();
+  State<LivestockDesease1> createState() => _LivestockDesease1State();
 }
 
-class _LivestockFert1State extends State<LivestockFert1> {
+class _LivestockDesease1State extends State<LivestockDesease1> {
   final List<String> images = [
     'assets/images/lvsdes2.png',
     'assets/images/lvsdes3.png',
     'assets/images/lvsdes4.png',
   ];
 
-  final List<String> titles = [
-    'Уруктандыруу',
-    'Уруктандыруу',
-    'Уруктандыруу',
-  ];
+  final List<String> titles = ['Дарылоо ', 'Дарылоо ', 'Дарылоо '];
 
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
@@ -31,7 +27,7 @@ class _LivestockFert1State extends State<LivestockFert1> {
     'Lorem Ipsum is simply\ndummy text of the',
   ];
   final List<Widget> pages = [
-    const LivestockFert2(),
+    const LivestockDesease2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -43,7 +39,7 @@ class _LivestockFert1State extends State<LivestockFert1> {
           },
           icon: Back(),
         ),
-        title: 'Уруктандыруу',
+        title: 'Дарылоо',
         actions: [Logo()],
       ),
       body: Padding(
@@ -68,6 +64,7 @@ class _LivestockFert1State extends State<LivestockFert1> {
                     padding: EdgeInsets.all(10),
                     child: Text('Lorem Ipsum is simply\ndummy text of the'),
                   ),
+                  
                 ],
               ),
             ),
@@ -84,16 +81,18 @@ class _LivestockFert1State extends State<LivestockFert1> {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
-                        leading: Image.asset(images[index]),
-                        title: Text(titles[index]),
-                        subtitle: Text(subtitles[index]),
-                        onTap: () {
+                      leading: Image.asset(images[index]),
+                      title: Text(titles[index]),
+                      subtitle: Text(subtitles[index]),
+                       onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => pages[index]),
                           );
-                        }),
+                        }
+                    ),
+                    
                   );
                 },
               ),
@@ -101,9 +100,9 @@ class _LivestockFert1State extends State<LivestockFert1> {
           ],
         ),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+       bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
+        topRight: Radius.circular(30)),
         child: BottomNavigationBar(
           backgroundColor: Color.fromRGBO(1, 165, 96, 1),
           items: <BottomNavigationBarItem>[
@@ -122,6 +121,7 @@ class _LivestockFert1State extends State<LivestockFert1> {
           ],
         ),
       ),
-    );
+      
+      );
   }
 }

@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/horses_desease2.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/sheep_fert2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class HorsesDesease1 extends StatefulWidget {
-  const HorsesDesease1({super.key});
+class SheepFert1 extends StatefulWidget {
+  const SheepFert1({super.key});
 
   @override
-  State<HorsesDesease1> createState() => _HorsesDesease1State();
+  State<SheepFert1> createState() => _SheepFert1State();
 }
 
-class _HorsesDesease1State extends State<HorsesDesease1> {
+class _SheepFert1State extends State<SheepFert1> {
   final List<String> images = [
-    'assets/images/lvsdes2.png',
-    'assets/images/lvsdes3.png',
-    'assets/images/lvsdes4.png',
+    'assets/images/shpfert2.png',
+    'assets/images/shpfert3.png',
+    'assets/images/shpfert4.png',
   ];
 
-  final List<String> titles = ['Дарылоо ', 'Дарылоо ', 'Дарылоо '];
+  final List<String> titles = [
+    'Уруктандыруу',
+    'Уруктандыруу ',
+    'Уруктандыруу '
+  ];
 
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
@@ -27,7 +31,7 @@ class _HorsesDesease1State extends State<HorsesDesease1> {
     'Lorem Ipsum is simply\ndummy text of the',
   ];
   final List<Widget> pages = [
-    const HorsesDesease2(),
+    const SheepFert2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -39,7 +43,7 @@ class _HorsesDesease1State extends State<HorsesDesease1> {
           },
           icon: Back(),
         ),
-        title: 'Дарылоо',
+        title: 'Уруктандыруу',
         actions: [Logo()],
       ),
       body: Padding(
@@ -56,7 +60,7 @@ class _HorsesDesease1State extends State<HorsesDesease1> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/medicine.png',
+                    'assets/images/shpfert1.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),
@@ -64,7 +68,6 @@ class _HorsesDesease1State extends State<HorsesDesease1> {
                     padding: EdgeInsets.all(10),
                     child: Text('Lorem Ipsum is simply\ndummy text of the'),
                   ),
-                  
                 ],
               ),
             ),
@@ -81,16 +84,16 @@ class _HorsesDesease1State extends State<HorsesDesease1> {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
-                      leading: Image.asset(images[index]),
-                      title: Text(titles[index]),
-                      subtitle: Text(subtitles[index]),
+                        leading: Image.asset(images[index]),
+                        title: Text(titles[index]),
+                        subtitle: Text(subtitles[index]),
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => pages[index]),
                           );
-                        }),                    
+                        }),
                   );
                 },
               ),
@@ -98,9 +101,9 @@ class _HorsesDesease1State extends State<HorsesDesease1> {
           ],
         ),
       ),
-       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
-        topRight: Radius.circular(30)),
+      bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
         child: BottomNavigationBar(
           backgroundColor: Color.fromRGBO(1, 165, 96, 1),
           items: <BottomNavigationBarItem>[
@@ -119,7 +122,6 @@ class _HorsesDesease1State extends State<HorsesDesease1> {
           ],
         ),
       ),
-      
-      );
+    );
   }
 }

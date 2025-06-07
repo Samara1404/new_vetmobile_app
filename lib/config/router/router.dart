@@ -14,8 +14,8 @@ import 'package:new_vetmobile_app/features/presentation/screens/login_screen.dar
 import 'package:new_vetmobile_app/features/presentation/screens/menu_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/register_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/sheep_screen.dart' ; 
-import 'package:new_vetmobile_app/features/presentation/screens/user_account.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/user_account_edit.dart';
+import 'package:new_vetmobile_app/features/presentation/prifile.screen/user_account.dart';
+import 'package:new_vetmobile_app/features/presentation/prifile.screen/user_account_edit.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/',

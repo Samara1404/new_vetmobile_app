@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/sheep_main2.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/horses_main2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class SheepMain1 extends StatefulWidget {
-  const SheepMain1({super.key});
+class HorsesMain1 extends StatefulWidget {
+  const HorsesMain1({super.key});
 
   @override
-  State<SheepMain1> createState() => _SheepMain1State();
+  State<HorsesMain1> createState() => _HorsesMain1State();
 }
 
-class _SheepMain1State extends State<SheepMain1> {
-  
+class _HorsesMain1State extends State<HorsesMain1> {
   final List<String> images = [
     'assets/images/shpmain2.png',
     'assets/images/shpmain3.png',
     'assets/images/shpmain3.png',
   ];
-final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
+  final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
- final List<Widget> pages = [
-    const SheepMain2(),
+  final List<Widget> pages = [
+    const HorsesMain2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -79,17 +78,16 @@ final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уру
                     ),
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
-                      leading: Image.asset(images[index]),
-                      title: Text(titles[index]),
-                      subtitle: Text(subtitles[index]),
-                      onTap: () {
+                        leading: Image.asset(images[index]),
+                        title: Text(titles[index]),
+                        subtitle: Text(subtitles[index]),
+                        onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => pages[index]),
                           );
                         }),
-                    
                   );
                 },
               ),

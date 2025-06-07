@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/sheep_desease1.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/sheep_fert1.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/sheep_main1.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/sheep_desease1.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/sheep_fert1.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/sheep_main1.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';

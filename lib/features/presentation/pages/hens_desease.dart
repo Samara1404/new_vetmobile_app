@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/livestock_main2.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/hens_desease2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class LivestockMain1 extends StatefulWidget {
-  const LivestockMain1({super.key});
+class HensDesease extends StatefulWidget {
+  const HensDesease({super.key});
 
   @override
-  State<LivestockMain1> createState() => _LivestockMain1State();
+  State<HensDesease> createState() => _HensDeseaseState();
 }
 
-class _LivestockMain1State extends State<LivestockMain1> {
+class _HensDeseaseState extends State<HensDesease> {
   final List<String> images = [
-    'assets/images/grass1.png',
-    'assets/images/grass2.png',
-    'assets/images/grass3.png',
+    'assets/images/lvsdes2.png',
+    'assets/images/lvsdes3.png',
+    'assets/images/lvsdes4.png',
   ];
-  final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
+
+  final List<String> titles = ['Дарылоо ', 'Дарылоо ', 'Дарылоо '];
+
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
-  final List<Widget> pages = [
-    const LivestockMain2(),
+final List<Widget> pages = [
+    const HensDesease2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class _LivestockMain1State extends State<LivestockMain1> {
           },
           icon: Back(),
         ),
-        title: 'Тоют',
+        title: 'Дарылоо',
         actions: [Logo()],
       ),
       body: Padding(
@@ -54,7 +56,7 @@ class _LivestockMain1State extends State<LivestockMain1> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/greengrass.png',
+                    'assets/images/hensdes2.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),
@@ -62,6 +64,7 @@ class _LivestockMain1State extends State<LivestockMain1> {
                     padding: EdgeInsets.all(10),
                     child: Text('Lorem Ipsum is simply\ndummy text of the'),
                   ),
+                  
                 ],
               ),
             ),
@@ -78,10 +81,10 @@ class _LivestockMain1State extends State<LivestockMain1> {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
-                        leading: Image.asset(images[index]),
-                        title: Text(titles[index]),
-                        subtitle: Text(subtitles[index]),
-                        onTap: () {
+                      leading: Image.asset(images[index]),
+                      title: Text(titles[index]),
+                      subtitle: Text(subtitles[index]),
+                    onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -95,9 +98,9 @@ class _LivestockMain1State extends State<LivestockMain1> {
           ],
         ),
       ),
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+       bottomNavigationBar: ClipRRect(
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(30),
+        topRight: Radius.circular(30)),
         child: BottomNavigationBar(
           backgroundColor: Color.fromRGBO(1, 165, 96, 1),
           items: <BottomNavigationBarItem>[
@@ -116,6 +119,7 @@ class _LivestockMain1State extends State<LivestockMain1> {
           ],
         ),
       ),
-    );
+      
+      );
   }
 }

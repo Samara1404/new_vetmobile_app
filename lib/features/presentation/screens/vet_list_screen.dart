@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/last_screen.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/last_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/news_text.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';

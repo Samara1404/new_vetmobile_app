@@ -1,37 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/sheep_fert2.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/livestock_main2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class SheepFert1 extends StatefulWidget {
-  const SheepFert1({super.key});
+class LivestockMain1 extends StatefulWidget {
+  const LivestockMain1({super.key});
 
   @override
-  State<SheepFert1> createState() => _SheepFert1State();
+  State<LivestockMain1> createState() => _LivestockMain1State();
 }
 
-class _SheepFert1State extends State<SheepFert1> {
+class _LivestockMain1State extends State<LivestockMain1> {
   final List<String> images = [
-    'assets/images/shpfert2.png',
-    'assets/images/shpfert3.png',
-    'assets/images/shpfert4.png',
+    'assets/images/grass1.png',
+    'assets/images/grass2.png',
+    'assets/images/grass3.png',
   ];
-
-  final List<String> titles = [
-    'Уруктандыруу',
-    'Уруктандыруу ',
-    'Уруктандыруу '
-  ];
-
+  final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
   final List<Widget> pages = [
-    const SheepFert2(),
+    const LivestockMain2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -43,7 +37,7 @@ class _SheepFert1State extends State<SheepFert1> {
           },
           icon: Back(),
         ),
-        title: 'Уруктандыруу',
+        title: 'Тоют',
         actions: [Logo()],
       ),
       body: Padding(
@@ -60,7 +54,7 @@ class _SheepFert1State extends State<SheepFert1> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/shpfert1.png',
+                    'assets/images/greengrass.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),

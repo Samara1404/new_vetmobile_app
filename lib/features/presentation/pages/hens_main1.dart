@@ -1,37 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/horses_fert2.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/hens_main2.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
 
-class HorsesFert extends StatefulWidget {
-  const HorsesFert({super.key});
+class HensMain1 extends StatefulWidget {
+  const HensMain1({super.key});
 
   @override
-  State<HorsesFert> createState() => _HorsesFertState();
+  State<HensMain1> createState() => _HensMain1State();
 }
 
-class _HorsesFertState extends State<HorsesFert> {
+class _HensMain1State extends State<HensMain1> {
+  
   final List<String> images = [
-    'assets/images/horses2.png',
-    'assets/images/horses3.png',
-    'assets/images/horses4.png',
+    'assets/images/shpmain2.png',
+    'assets/images/shpmain3.png',
+    'assets/images/shpmain3.png',
   ];
-
-  final List<String> titles = [
-    'Уруктандыруу',
-    'Уруктандыруу ',
-    'Уруктандыруу '
-  ];
-
+final List<String> titles = ['Тоюттануусу', 'Ооруусу', 'Уруктандыруу'];
   final List<String> subtitles = [
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
     'Lorem Ipsum is simply\ndummy text of the',
   ];
-  final List<Widget> pages = [
-    const HorsesFert2(),
+ final List<Widget> pages = [
+    const HensMain2(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -43,7 +38,7 @@ class _HorsesFertState extends State<HorsesFert> {
           },
           icon: Back(),
         ),
-        title: 'Уруктандыруу',
+        title: 'Тоют',
         actions: [Logo()],
       ),
       body: Padding(
@@ -60,7 +55,7 @@ class _HorsesFertState extends State<HorsesFert> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/horses1.png',
+                    'assets/images/corn.png',
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: 20),
@@ -84,16 +79,17 @@ class _HorsesFertState extends State<HorsesFert> {
                     ),
                     margin: EdgeInsets.symmetric(vertical: 12),
                     child: ListTile(
-                        leading: Image.asset(images[index]),
-                        title: Text(titles[index]),
-                        subtitle: Text(subtitles[index]),
-                        onTap: () {
+                      leading: Image.asset(images[index]),
+                      title: Text(titles[index]),
+                      subtitle: Text(subtitles[index]),
+                       onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => pages[index]),
                           );
                         }),
+                    
                   );
                 },
               ),

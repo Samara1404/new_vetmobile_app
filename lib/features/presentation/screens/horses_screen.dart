@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/horses_desease1.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/horses_fert1.dart';
-import 'package:new_vetmobile_app/features/presentation/screens/horses_main1.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/horses_desease1.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/horses_fert1.dart';
+import 'package:new_vetmobile_app/features/presentation/pages/horses_main1.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/logo.dart';
