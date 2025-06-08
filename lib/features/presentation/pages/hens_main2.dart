@@ -32,7 +32,7 @@ class _HensMain2State extends State<HensMain2> {
               SizedBox(height: 16),
               Container(
                 child:
-                    Image.asset('assets/images/newcorn.png', fit: BoxFit.cover),
+                    Image.asset('assets/images/ncorn.png', fit: BoxFit.cover),
               ),
               SizedBox(height: 24),
               Image.asset('assets/images/lvstext2.png'),

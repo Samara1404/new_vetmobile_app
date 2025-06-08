@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_vetmobile_app/core/constant/style.dart';
-import 'package:new_vetmobile_app/features/presentation/pages/last_screen.dart';
 import 'package:new_vetmobile_app/features/presentation/screens/news_text.dart';
+import 'package:new_vetmobile_app/features/presentation/screens/vet_alert.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/back.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_app_bar.dart';
 import 'package:new_vetmobile_app/features/presentation/widgets/custom_text_field.dart';
@@ -97,7 +97,7 @@ class _VetListScreenState extends State<VetListScreen> {
                     if (message.isNotEmpty) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LastScreen()),
+                        MaterialPageRoute(builder: (context) => VetAlert()),
                       );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
